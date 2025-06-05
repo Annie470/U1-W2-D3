@@ -172,16 +172,18 @@ console.log(eyeColor);
   Usa un while loop per calcolare la massa totale dell'equipaggio. 
   Salvala in una variabile chiamata "crewMass".
 */
-let crewMass = "";
+let crewMass = 0;
 let i = 0;
 while (i < starWarsCharacters.length) {
-  crewMass += starWarsCharacters[i].name;
+  crewMass += starWarsCharacters[i].mass;
   i++;
 }
 console.log(crewMass);
 
 /* ESERCIZIO 7
-  Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi dell'array "starWarsCharacters".
+  Crea uno if/else statement per rivelare la tipologia di carico, 
+  utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi
+   dell'array "starWarsCharacters".
 
   Se la massa è inferiore a 500 stampa in console: "Ship is under loaded"
   Se la massa è superiore a 500 e inferiore a 700 stampa in console: "Ship is half loaded"
@@ -189,8 +191,41 @@ console.log(crewMass);
   Se la massa è superiore a 900 e inferiore a 1000 stampa in console: "Critical Load: Over 900"
   Se la massa è superiore a 1000 stampa in console: "DANGER! OVERLOAD ALERT: escape from ship now!"
 
-  Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
+  Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci
+   ad ottenere un messaggio diverso.
 */
+
+if (crewMass < 500) {
+  console.log("Ship is under loaded");
+} else if (crewMass > 500 && crewMass < 700) {
+  console.log("Ship is half loaded");
+} else if (crewMass > 700 && crewMass < 900) {
+  console.log("Warning: Load is over 700");
+} else if (crewMass > 900 && crewMass < 1000) {
+  console.log("Critical Load: Over 900");
+} else {
+  console.log("DANGER! OVERLOAD ALERT: escape from ship now!");
+}
+//CAMBIO MASSA DI UNO DEI PERSONAGGI E RICALCOLO
+starWarsCharacters[1].mass = 200;
+crewMass = 0;
+i = 0;
+while (i < starWarsCharacters.length) {
+  crewMass += starWarsCharacters[i].mass;
+  i++;
+}
+console.log(crewMass);
+if (crewMass < 500) {
+  console.log("Ship is under loaded");
+} else if (crewMass > 500 && crewMass < 700) {
+  console.log("Ship is half loaded");
+} else if (crewMass > 700 && crewMass < 900) {
+  console.log("Warning: Load is over 700");
+} else if (crewMass > 900 && crewMass < 1000) {
+  console.log("Critical Load: Over 900");
+} else {
+  console.log("DANGER! OVERLOAD ALERT: escape from ship now!");
+}
 
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
