@@ -238,11 +238,32 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
   }
 }
 console.log(starWarsCharacters);
+
 /* --EXTRA-- ESERCIZIO 9
-  Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
-  Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
+  Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array 
+  "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
+  Una volta fatto crea un console.log per controllare la proprietà length di 
+  "charactersNames" prima e dopo l'operazione.
 */
+console.log(charactersNames.length - 1);
+for (let b = 0; b < charactersNames.length; b++) {
+  for (let i = 0; i < femaleCharacters.length; i++) {
+    if (femaleCharacters[i].name === charactersNames[b]) {
+      charactersNames.splice(b, 1);
+    }
+  }
+}
+console.log(charactersNames.length - 1);
+console.log(charactersNames);
 
 /* --EXTRA-- ESERCIZIO 10
-  Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
+  Crea una funzionalità che selezioni un elemento casuale dall'array 
+  "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo
+   (a tuo piacimento).
 */
+function getRandomElement(numeroRandom) {
+  const random = Math.floor(Math.random() * starWarsCharacters.length);
+  return numeroRandom[random];
+}
+let randomElement = getRandomElement(starWarsCharacters);
+console.log(randomElement);
